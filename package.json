@@ -1,6 +1,6 @@
 {
   "name": "env-look",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Catch .env drift before it breaks a deploy - compares .env against .env.example and flags missing, extra, empty, or duplicate keys.",
   "main": "src/cli.js",
   "bin": {
