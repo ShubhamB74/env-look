@@ -1,23 +1,23 @@
-# envguard
+# env-look
 
 Catch `.env` drift before it breaks a deploy.
 
-`envguard` compares your `.env` against `.env.example` and tells you exactly what's out of sync — missing keys, stray keys nobody documented, empty values, and duplicate definitions. Zero dependencies, works in any Node project regardless of framework.
+`env-look` compares your `.env` against `.env.example` and tells you exactly what's out of sync — missing keys, stray keys nobody documented, empty values, and duplicate definitions. Zero dependencies, works in any Node project regardless of framework.
 
 ## The problem
 
-Someone adds a new required env var, forgets to update `.env.example`, and three days later a teammate's local setup — or worse, a CI pipeline — breaks with a cryptic error, five layers away from the actual missing variable. `envguard` catches this in one command, and can gate CI so it never reaches production.
+Someone adds a new required env var, forgets to update `.env.example`, and three days later a teammate's local setup — or worse, a CI pipeline — breaks with a cryptic error, five layers away from the actual missing variable. `env-look` catches this in one command, and can gate CI so it never reaches production.
 
 ## Install
 
 ```bash
-npm install -g envguard
+npm install -g env-look
 ```
 
 Or run it without installing:
 
 ```bash
-npx envguard check
+npx env-look check
 ```
 
 ## Usage
@@ -25,11 +25,11 @@ npx envguard check
 ### Check for drift
 
 ```bash
-envguard check
+env-look check
 ```
 
 ```
-envguard checking .env against .env.example
+env-look checking .env against .env.example
 
 ✖ Missing (1) - in .env.example but not .env:
   - DB_PORT
@@ -53,7 +53,7 @@ Options:
 ### Generate `.env.example` from an existing `.env`
 
 ```bash
-envguard init
+env-look init
 ```
 
 Keeps every key, comment, and blank line from your `.env`, strips every real value, so nothing secret ends up in the file you commit.
@@ -65,7 +65,7 @@ Options: `--env <file>`, `--out <file>`, `--force` (overwrite if the output alre
 ```yaml
 # GitHub Actions example
 - name: Check env vars are in sync
-  run: npx envguard check --strict
+  run: npx env-look check --strict
 ```
 
 This fails the build the moment `.env.example` and the actual required config drift apart, instead of failing later at deploy time with a much less obvious error.
@@ -79,7 +79,7 @@ This fails the build the moment `.env.example` and the actual required config dr
 
 ## Why zero dependencies
 
-A tool that reads your environment configuration is a reasonable thing to be careful about. `envguard` ships with no runtime dependencies at all — nothing to audit beyond this repo's own code.
+A tool that reads your environment configuration is a reasonable thing to be careful about. `env-look` ships with no runtime dependencies at all — nothing to audit beyond this repo's own code.
 
 ## Contributing
 
