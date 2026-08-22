@@ -1,10 +1,10 @@
 {
-  "name": "env-doctor",
+  "name": "envguard",
   "version": "0.1.0",
   "description": "Catch .env drift before it breaks a deploy - compares .env against .env.example and flags missing, extra, empty, or duplicate keys.",
   "main": "src/cli.js",
   "bin": {
-    "env-doctor": "bin/env-doctor.js"
+    "envguard": "bin/env-doctor.js"
   },
   "scripts": {
     "test": "node --test"
