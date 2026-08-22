@@ -7,13 +7,13 @@ const c = require('./colors');
 const VERSION = require('../package.json').version;
 
 const HELP = `
-${c.bold('env-doctor')} - catch .env drift before it breaks a deploy
+${c.bold('env-look')} - catch .env drift before it breaks a deploy
 
 ${c.bold('Usage')}
-  env-doctor check [options]     Compare .env against .env.example (default command)
-  env-doctor init [options]      Generate .env.example from an existing .env
-  env-doctor --version           Print version
-  env-doctor --help              Show this help
+  env-look check [options]     Compare .env against .env.example (default command)
+  env-look init [options]      Generate .env.example from an existing .env
+  env-look --version           Print version
+  env-look --help              Show this help
 
 ${c.bold('Options for "check"')}
   --env <file>          Path to the env file to check      (default: .env)
@@ -27,10 +27,10 @@ ${c.bold('Options for "init"')}
   --force                 Overwrite the output file if it already exists
 
 ${c.bold('Examples')}
-  env-doctor check
-  env-doctor check --env .env.production --example .env.example --strict
-  env-doctor check --json
-  env-doctor init
+  env-look check
+  env-look check --env .env.production --example .env.example --strict
+  env-look check --json
+  env-look init
 `;
 
 function readFileOrEmpty(filePath) {
@@ -63,7 +63,7 @@ function parseArgs(argv) {
 }
 
 function printReportHuman(report, envPath, examplePath) {
-  console.log(`${c.bold('env-doctor')} checking ${c.cyan(envPath)} against ${c.cyan(examplePath)}\n`);
+  console.log(`${c.bold('env-look')} checking ${c.cyan(envPath)} against ${c.cyan(examplePath)}\n`);
 
   if (!hasIssues(report)) {
     console.log(c.green('✔ No issues found. Your .env is in sync with .env.example.'));
