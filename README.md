@@ -1,5 +1,7 @@
 # env-look
 
+[![npm version](https://img.shields.io/npm/v/env-look.svg)](https://www.npmjs.com/package/env-look)
+
 Catch `.env` drift before it breaks a deploy.
 
 `env-look` compares your `.env` against `.env.example` and tells you exactly what's out of sync — missing keys, stray keys nobody documented, empty values, and duplicate definitions. Zero dependencies, works in any Node project regardless of framework.
