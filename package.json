@@ -18,7 +18,15 @@
     "environment-variables",
     "ci"
   ],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ShubhamB74/env-doctor.git"
+  },
+  "homepage": "https://github.com/ShubhamB74/env-doctor#readme",
+  "bugs": {
+    "url": "https://github.com/ShubhamB74/env-doctor/issues"
+  },
+  "author": "ShubhamB74",
   "license": "MIT",
   "engines": {
     "node": ">=16"
