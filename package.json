@@ -22,11 +22,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ShubhamB74/env-doctor.git"
+    "url": "git+https://github.com/ShubhamB74/env-look.git"
   },
-  "homepage": "https://github.com/ShubhamB74/env-doctor#readme",
+  "homepage": "https://github.com/ShubhamB74/env-look#readme",
   "bugs": {
-    "url": "https://github.com/ShubhamB74/env-doctor/issues"
+    "url": "https://github.com/ShubhamB74/env-look/issues"
   },
   "engines": {
     "node": ">=16"
